@@ -2,5 +2,7 @@
 var bale = require('../');
 
 bale(process.argv[2], function(err, out) {
+  if(err)
+    return console.error("bale error: %s", err);
   console.log(out);
 });

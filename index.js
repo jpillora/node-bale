@@ -1,5 +1,4 @@
 
-var _ = require('lodash');
 var fs = require('fs');
 var path = require('path');
 var falafel = require('falafel');
@@ -13,6 +12,9 @@ var moduleTemplate = getTemplate('module.js');
 var mainTemplate = getTemplate('main.js');
 
 module.exports = function(entryFile, callback) {
+
+  if(!entryFile || !fs.existsSync(entryFile))
+    return callback('missing entry file');
 
   entryFile = path.resolve(entryFile);
 
@@ -37,22 +39,24 @@ module.exports = function(entryFile, callback) {
 
           dest = path.join(path.dirname(m.id), dest);
 
-          var req = _.find(modules, function(r) {
-            return r.id === dest;
-          });
+          for(var i = 0; i < modules.length; i++)
+            if(modules[i].id === dest)
+              return node.arguments[0].update(i);
 
-          if(!req) return console.warn("WARNING: cannot find: %s", dest);
-          
-          node.arguments[0].update(modules.indexOf(req));
+          console.warn("WARNING: cannot find: %s", dest);
         }
       });
     });
 
-    callback(null,
-      mainTemplate.replace('//MODULES//', modules.map(function(m) {
-        return moduleTemplate.replace('//SOURCE//', m.source);
-      }).join(',\n'))
-    );
+
+    var modulesOutput = indent(modules.map(function(m) {
+      var source = indent(m.source.toString());
+      return indent(moduleTemplate.replace('//SOURCE//', source));
+    }).join(',\n'));
+
+    var output = mainTemplate.replace('//MODULES//', modulesOutput);
+
+    callback(null,output);
   });
 };
 
@@ -62,4 +66,7 @@ function getTemplate(file) {
   return fs.readFileSync(path.join(__dirname, 'templates', file)).toString();
 }
 
+function indent(str) {
+  return str.replace(/^/mg, '  ');
+}
 

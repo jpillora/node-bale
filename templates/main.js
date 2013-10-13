@@ -1,15 +1,18 @@
+(function() {
+  var require = (function() {
+    var cache = {};
+    return function(id) {
+      if(cache[id])
+        return cache[id];
+      var exports = {},
+          module = cache[id] = { exports: exports };
+      modules[id](require, module, exports);
+      return exports;
+    };
+  }());
 
-var required = {};
-var require = function(id) {
-  if(required[id])
-    return required[id];
-  var exports = {},
-      module = required[id] = { exports: exports };
-  modules[id](require, module, exports);
-  return exports;
-};
-
-var modules = [
+  var modules = [
 //MODULES//
-];
-require(0);
+  ];
+  require(0);
+}());
