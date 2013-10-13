@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var bale = require('../');
+
+bale(process.argv[2], function(err, out) {
+  console.log(out);
+});

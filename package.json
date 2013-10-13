@@ -1,0 +1,26 @@
+{
+  "name": "node-bale",
+  "version": "0.1.0",
+  "description": "Let's bale up some Node",
+  "main": "index.js",
+  "bin": {
+    "bale": "bin/bale"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpillora/node-bale"
+  },
+  "author": "Jaime Pillora <dev@jpillora.com> (http://jpillora.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpillora/node-bale/issues"
+  },
+  "dependencies": {
+    "falafel": "~0.3.1",
+    "module-deps": "~1.0.2",
+    "lodash": "~2.2.1"
+  }
+}
