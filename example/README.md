@@ -31,3 +31,10 @@ exports.bar = 42;
 ];
 require(0);
 ```
+
+```
+var required={},require=function(r){if(required[r])return required[r];var e={},
+u=required[r]={exports:e};return modules[r](require,u,e),e},modules=[function(r){var e=r(1);
+console.log(e.foo+7)},function(r,e,u){var o=r(2);u.foo=o.bar+4},function(r,e,u){u.bar=42}];
+require(0);
+```
