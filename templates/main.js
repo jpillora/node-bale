@@ -14,5 +14,5 @@
   var modules = [
 //MODULES//
   ];
-  require(0);
+  return require(0);
 }());
