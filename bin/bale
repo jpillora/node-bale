@@ -10,7 +10,7 @@ program
   .option('-h, --hash', 'hash module names')
   .parse(process.argv);
 
-bale(program.args[0], program, function(err, out) {
+bale(program.args[0], program.args[1], program, function(err, out) {
   if(err)
     return console.error("bale error: %s", err.stack || err);
   console.log(out);
