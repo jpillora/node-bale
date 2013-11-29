@@ -2,7 +2,7 @@
   "name": "node-bale",
   "version": "0.1.0",
   "description": "Let's bale up some Node",
-  "main": "index.js",
+  "main": "lib/bale.js",
   "bin": {
     "bale": "bin/bale"
   },
@@ -20,6 +20,14 @@
   },
   "dependencies": {
     "falafel": "~0.3.1",
-    "module-deps": "~1.0.2"
+    "module-deps": "~1.0.2",
+    "uglify-js": "~2.4.6",
+    "commander": "~2.1.0",
+    "fstream": "~0.1.25",
+    "tar": "~0.1.18",
+    "resolve": "~0.6.1",
+    "mkdirp": "~0.3.5",
+    "ncp": "~0.4.2",
+    "async": "~0.2.9"
   }
 }

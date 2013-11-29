@@ -31,7 +31,25 @@
     return module.exports;
   }
   //expose
-  module.exports = req("/*EN☃TRY*/");
+  module.exports = req("main-js");
 }({
-/*M☃DULES*/
+  "main-js": function(require){
+    var a = require("a-index-js");
+    var b = require("node_modules-b-lib-main-js");
+    var c = require("node_modules-c");
+    var d = require("node_modules-d-index-js");
+    
+    console.log(a+b-c,d);
+    
+    
+  },
+  "node_modules-d-index-js": function(require, module){
+    module.exports = "d";
+  },
+  "node_modules-b-lib-main-js": function(require, module){
+    module.exports = 9;
+  },
+  "a-index-js": function(require, module){
+    module.exports = 32;
+  }
 }));
