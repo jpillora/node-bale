@@ -1,5 +1,5 @@
 {
-  "name": "node-bale",
+  "name": "bale",
   "version": "0.2.0",
   "description": "Let's bale up some Node",
   "main": "lib/bale.js",
