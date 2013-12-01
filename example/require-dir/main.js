@@ -1,6 +1,6 @@
 
-// var requireDir = require('../../').requireDir;
+var requireDir = require('bale').requireDir;
 
-var foo = requireDir(__dirname, './lib/foo');
+var foo =  requireDir(__dirname, './lib/foo');
 
 console.log(foo.foo + 7);

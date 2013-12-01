@@ -11,7 +11,7 @@ program
   .option('-o, --output-file [file]', 'output destination')
   .parse(process.argv);
 
-bale.pack(program.args[0], program, function(err) {
+bale(program.args[0], program, function(err) {
   if(err) return console.error("bale error: %s", err.stack || err);
   if(program.outputFile) console.log('Written to: "%s"', program.outputFile);
 });
