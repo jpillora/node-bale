@@ -13,5 +13,5 @@ program
 
 bale.pack(program.args[0], program, function(err) {
   if(err) return console.error("bale error: %s", err.stack || err);
-  console.log('done');
+  if(program.outputFile) console.log('Written to: "%s"', program.outputFile);
 });

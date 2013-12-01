@@ -4,4 +4,3 @@ var c = require('c');
 var d = require('d');
 
 console.log(a+b-c,d);
-
