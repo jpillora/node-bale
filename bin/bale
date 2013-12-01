@@ -5,13 +5,13 @@ var program = require('commander');
 
 program
   .version(pkg.version)
-  .usage('[options] entry-file [output-file.tar.gz]')
+  .usage('[options] entry-file')
   .option('-c, --compress', 'compress')
   .option('-h, --hash', 'hash module names')
+  .option('-o, --output-file [file]', 'output destination')
   .parse(process.argv);
 
-bale(program.args[0], program.args[1], program, function(err, out) {
-  if(err)
-    return console.error("bale error: %s", err.stack || err);
-  console.log(out);
+bale.pack(program.args[0], program, function(err) {
+  if(err) return console.error("bale error: %s", err.stack || err);
+  console.log('done');
 });
