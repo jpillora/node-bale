@@ -1,3 +1,6 @@
 {
-  "name":"modules"
+  "name":"modules",
+  "version":"9.9.9",
+  "bale":true,
+  "main":"main"
 }
