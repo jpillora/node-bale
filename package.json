@@ -20,15 +20,12 @@
   },
   "dependencies": {
     "falafel": "~0.3.1",
-    "module-deps": "~1.0.2",
     "uglify-js": "~2.4.6",
     "commander": "~2.1.0",
     "resolve": "~0.6.1",
     "q": "~0.9.7",
-    "adm-zip": "~0.4.3",
     "glob": "~3.2.7",
-    "tar": "~0.1.19",
     "event-stream": "~3.0.18",
-    "fstream": "~0.1.25"
+    "archiver": "~0.4.10"
   }
 }
